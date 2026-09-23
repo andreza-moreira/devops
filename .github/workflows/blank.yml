@@ -63,3 +63,11 @@ jobs:
         with:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{secrets.DOCKERHUB_SENHA}}
+
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v7.4.0
+        with:
+          file: dockerfile
+          push: True
+          tags: andreza/img imagem:1.0
