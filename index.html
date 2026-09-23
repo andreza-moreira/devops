@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Teste - Projetos Acadêmicos</title>
+    
+    <!-- CSS Incorporado -->
+    <style>
+        /* ==========================================================================
+           Configurações Globais & Variáveis
+           ========================================================================== */
+        :root {
+            --primary-color: #2563eb;    /* Azul Principal */
+            --primary-hover: #1d4ed8;    /* Azul para Hover */
+            --text-color: #1f2937;       /* Cinza Escuro para texto */
+            --text-muted: #6b7280;       /* Cinza Claro para subtítulos */
+            --bg-light: #f9fafb;         /* Fundo levemente acinzentado */
+            --bg-white: #ffffff;         /* Fundo branco */
+            --border-color: #e5e7eb;     /* Cor de bordas suaves */
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --max-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           Utilitários e Layout
+           ========================================================================== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-light);
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-small:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* ==========================================================================
+           Cabeçalho (Header & Nav)
+           ========================================================================== */
+        .header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ==========================================================================
+           Seção Hero (Início)
+           ========================================================================== */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* ==========================================================================
+           Grid de Cards (Recursos)
+           ========================================================================== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           Rodapé
+           ========================================================================== */
+        .footer {
+            background-color: var(--bg-white);
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================================================
+           Responsividade
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Projeto<span>Aula</span></a>
+            <nav class="nav-links">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#contato" class="btn btn-small">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Desenvolvimento Web Simplificado</h1>
+            <p>Esta é uma página de teste criada para demonstrar boas práticas de estrutura HTML5 e estilização CSS em ambiente acadêmico.</p>
+            <div class="hero-buttons">
+                <a href="#recursos" class="btn btn-primary">Ver Recursos</a>
+                <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre o Teste</h2>
+            <p class="section-subtitle">
+                O objetivo desta página é apresentar um layout responsivo, limpo e com código legível para fins de avaliação ou prática de aula.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Recursos / Cards -->
+    <section id="recursos" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Recursos Demonstrados</h2>
+            <div class="cards-grid">
+                
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>HTML Semântico</h3>
+                    <p>Uso adequado de tags como header, nav, section e footer para melhorar a acessibilidade e estrutura.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>CSS Moderno</h3>
+                    <p>Uso de Flexbox e CSS Grid para alinhamento rápido, além de variáveis para manter consistência nas cores.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Design Responsivo</h3>
+                    <p>Layout projetado para se adaptar a diferentes tamanhos de tela, como computadores e smartphones.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 - Teste de Aula | Desenvolvido para fins educacionais.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
