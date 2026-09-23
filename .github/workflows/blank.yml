@@ -70,4 +70,4 @@ jobs:
         with:
           file: dockerfile
           push: True
-          tags: andreza/img imagem:1.0
+          tags: andrezamoreira/img_nomedaimagem:1.0
